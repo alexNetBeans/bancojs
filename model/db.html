@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script type="text/javascript" src="conectar.js"></script>
+<script type="text/javascript" src="db.js"></script>
+
+<script type="text/javascript">
+	
+	cadastrar();
+	
+</script>
+
+</head>
+<body>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">BancoJS - Mensagem do Sistema</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Cadastro Finalizado com Sucesso !</p>
+      </div>
+      <div class="modal-footer">
+        <a href="../views/login.html" class="btn btn-success" role="button">ir para login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>	
+
+    <script type="text/javascript">
+    	// Chama a Modal. informando ao usuário que o cadastro foi concluído.
+		
+		$('#myModal').modal('show');
+
+	</script>
+
+</body>
+</html>

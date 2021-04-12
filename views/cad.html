@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <script src="mensagem.js"></script>
+    
+
+    <title>BancoJS</title>
+  </head>
+  <body>
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  <a class="navbar-brand" href="#">Bem-vindo ao BancoJS</a>
+ </nav>
+
+<div class="container">
+
+    <div class="row">		
+
+    	<div class="col-md-3"></div>	
+
+	   <div class="col-md-6">
+
+	    <div class="text-center mt-2">	
+	    		<img src="../images/iconLogin.jpg" width="240" class="mt-2 img-fluid">
+	    </div>
+	    		
+	    	
+
+	    		<label><strong>Nome</strong></label>
+	    		<input type="text" class="form-control mb-3" autofocus placeholder="Nome que irá aparecer no seu perfil" id="nome">
+
+	    		<label><strong>Usuário</strong></label>
+	    		<input type="text" class="form-control mb-3" autofocus placeholder="Usuário usado para login" id="usuario">
+
+	    		<label><strong>Senha</strong></label>
+	    		<input type="password" class="form-control mb-3" placeholder="informe uma senha" id="senha">
+
+	    		<button class="btn btn-success btn-block mb-3" id="btnCad">Cadastrar</button>
+	    			
+	    	  <script>
+                      if (sessionStorage.getItem('loginErro') == '1')
+                        {
+                            document.write(mensagem("informações incompletas !"));
+                        }
+                           
+              </script>  
+
+	    		<div class="text-right mt-3">
+	    				<a href="login.html">Já tenho cadastro</a>
+	    		</div>
+
+	  </div>	
+
+    	<div class="col-md-3"></div>
+
+    </div>
+
+	</div> <!-- Fecha container -->
+
+	<script type="text/javascript">
+			
+		let btnCad     =   document.querySelector('#btnCad');
+		let nome       =   document.querySelector('#nome');
+		let usuario    =   document.querySelector('#usuario');
+		let senha      =   document.querySelector('#senha');
+
+		btnCad.addEventListener('click', function ()
+		{
+			sessionStorage.setItem('nome', nome.value);
+			sessionStorage.setItem('usuario', usuario.value);
+			sessionStorage.setItem('senha', senha.value);
+			sessionStorage.setItem('dataCad', dia());	
+
+			location.href = "../controller/cadCtrl.html";
+
+		});
+
+	</script>
+
+	<script type="text/javascript" src="../lib/bootstrap/js/dia.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

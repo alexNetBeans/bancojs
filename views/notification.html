@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/estilo.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>  
+    <script type="text/javascript" src="modal.js"></script>
+    <script type="text/javascript" src="../model/conectar.js"></script>
+    
+		<script type="text/javascript" src="../model/addamigos.js"></script>
+		<script type="text/javascript" src="../lib/bootstrap/js/dia.js"></script>
+    <script type="text/javascript" src="../model/checkLogin.js"></script>
+    <script type="text/javascript" src="../model/enviaMsg.js"></script>
+    <script type="text/javascript" src="../model/notifi.js"></script>
+    
+    <script type="text/javascript">
+          checkLogin();
+    </script>
+    
+    	<title>BancoJS</title>
+  </head>
+  <body>
+    
+<!-- MENU NAVBAR -->
+    
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="	navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+   <!-- LINKS NO MENU -->   
+      
+	    <li class="nav-item">
+	           <a class="nav-link" href="saque.html">Saque<span class="sr-only">(current)</span></a>
+	    </li>
+
+	    <li class="nav-item">
+	           <a class="nav-link" href="depositar.html">Depositar</a>
+	    </li>
+
+	     <li class="nav-item">
+	           <a class="nav-link" href="historico.html">Histórico</a>
+	     </li>
+
+	    <li class="nav-item">
+	        	<a class="nav-link" href="avatar.html">Perfil</a>
+	    </li>
+      
+   <li class="nav-item">
+            <button type="button" class="btn btn-primary" title="Notificações">
+               <a href="notification.html"> <img src="../images/alerta.png" width="20" class="img-fluid"> </a>
+                <span class="badge badge-dark">
+                    <script>
+                            document.write(sessionStorage.getItem('n'));     
+                  </script>
+              </span>
+                <span class="sr-only">unread messages</span>
+          </button>
+        </li>
+      
+      <li class="nav-item">
+            <button type="button" class="btn btn-primary" title="Outros usuários">
+               <a href="addamigos.html">
+                   <img src="../images/myfriends.png" width="25" class="img-fluid">
+               </a> 
+          </button>  
+	    </li>
+      
+	 </ul>
+
+	 <ul class="navbar-nav mr-right">
+	 	 <li class="nav-item">
+	     	   <a class="nav-link" href="../index.html">Sair</a>
+	     </li>
+	 </ul>
+
+    
+  </div>
+</nav>
+    
+<div class="container">
+	<div class="row">		
+		<div class="col-md-2"></div>	
+			<div class="col-md-8">
+				<div class="text-center">	
+	    			<img src="../images/myfriends.png" width="105" class="mt-5 img-fluid" id="userAvatar">
+	    		</div>
+	    		<hr>
+        
+       <div>
+         
+          <table class="table table-striped" id="a">
+              <script>
+                // Chama função que cria tabela com os usuários.
+                   listaNotifi();  
+                
+              </script>   
+          </table>
+         
+        </div>      
+
+<!-- MODAL DO CHAT -->        
+        
+<div class="modal fade" tabindex="-1" role="dialog" id="msgModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">BancoJS - Chat </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><img src="#" width="85" id="avatar">  <span id="rement" class="text-center"></span></p>
+        <p><span id="msg"> </span></p>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-danger" id="btnChat">Sair</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+      	</div> <!-- Fecha container -->
+    <script type="text/javascript" src="../model/verMsg.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>  
+        
+        
